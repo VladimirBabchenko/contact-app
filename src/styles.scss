@@ -1,0 +1,42 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+	box-sizing: border-box;
+
+	&:before,
+	&:after {
+		box-sizing: border-box;
+	}
+}
+
+body {
+	min-width: 320px;
+	margin: 0;
+	font-family: Roboto, sens-serif;
+	text-rendering: optimizelegibility;
+    -webkit-font-smoothing: antialiased;
+    font-display: swap;
+    font-size: 16px;
+}
+
+input,
+textarea {
+	padding: 0;
+	border: 0;
+	background: 0;
+	font-size: 16px;
+
+	&:focus {
+		outline: 0;
+	}
+}
+
+button {
+	padding: 0;
+	border: 0;
+	background: none;
+	cursor: pointer;
+
+	&:focus {
+		outline: 0;
+	}
+}

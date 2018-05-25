@@ -1,0 +1,91 @@
+@import '../../../assets/variables.scss';
+@import '../../../assets/mixins.scss';
+
+.side-menu {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	padding: 0;
+	margin: $indM 0 0;
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+
+		&:not(:last-child) {
+			margin-bottom: $indS;
+		}
+
+		.side-menu__item--active & {
+			flex-grow: 1;
+		}
+	}
+
+	&__item-button {
+		flex-shrink: 0;
+		width: 100%;
+		padding: 0 $indM $indS;
+		font-size: $fontXS;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 1.5px;
+		text-align: left;
+		transition: color $transDuration;
+		color: fade-out($sideMenuTextClr, .5);
+
+		&:hover,
+		&:focus,
+		.side-menu__item--active & {
+			color: $sideMenuBtnClr;
+		}
+	}
+}
+
+.items-box {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	overflow: auto;
+	display: none;
+
+	.side-menu__item--active & {
+		display: flex;
+	}
+}
+
+.bdays-list {
+	display: flex;
+	flex-direction: column;
+
+	&__item {
+		display: flex;
+		justify-content: space-between;
+		flex-shrink: 0;
+		height: $indXL;
+		padding: 0 $indM;
+		font-size: $fontM;
+		text-align: left;
+		transition: color $transDuration;
+		color: fade-out($sideMenuTextClr, .5);
+
+		&:hover,
+		&:focus {
+			color: $sideMenuTextClr;
+		}
+	}
+
+	&__item-wrapper {
+		display: flex;
+		flex-direction: column;
+		overflow: hidden;
+	}
+
+	&__item-name {
+		@include truncate;
+	}
+
+	&__item-age,
+	&__item-date {
+		font-size: $fontXS;
+	}
+}

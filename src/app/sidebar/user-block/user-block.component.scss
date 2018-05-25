@@ -1,0 +1,32 @@
+@import '../../../assets/variables.scss';
+@import '../../../assets/mixins.scss';
+
+.user {
+	@include userCard;
+	flex-shrink: 0;
+	padding: 0 $indM;
+	margin-top: $indM;
+
+	@media ($mdDevice) {
+		margin-top: $indS;
+	}
+
+	&__name {
+		color: $sidebarTextClr;
+	}
+
+	&__log-out {
+		font-size: $fontXS;
+		color: fade-out($sidebarTextClr, .5);
+		transition: color $transDuration;
+
+		&:hover,
+		&:focus {
+			color: $sidebarTextClr;
+		}
+	}
+
+	&__menu {
+		@include dotsMenu(fade-out($sidebarTextClr, .5), $sidebarTextClr);
+	}
+}
