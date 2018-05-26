@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { ContactsService } from './contacts.service';
+
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
@@ -38,7 +40,9 @@ import { NotFoundComponent } from './not-found/not-found.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    ContactsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

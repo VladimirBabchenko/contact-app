@@ -1,5 +1,6 @@
 <!-- Contact full view -->
-<section class="contact-view">
+<section class="contact-view"
+  *ngIf="contact">
   <section class="contact-view__button-box">
     <button class="contact-view__edit-button">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 469.331 469.331">
@@ -20,16 +21,16 @@
 
       <section class="contact-view__main-info-wrapper">
         <section class="contact-view__name-wrapper">
-          <span class="contact-view__name">Name</span>
-          <span class="contact-view__name">Surname</span>
+          <span class="contact-view__name">{{contact.name}}</span>
+          <span class="contact-view__name">{{contact.surname}}</span>
         </section>
-        <div class="contact-view__description">Description</div>
+        <div class="contact-view__description">{{contact.description}}</div>
       </section>
     </section>
 
     <div class="contact-view__field">
       <span class="contact-view__field-name">Phone</span>
-      <span class="contact-view__field-text">0681811990</span>
+      <span class="contact-view__field-text">{{contact.phone}}</span>
     </div>
 
     <div class="contact-view__field contact-view__field--instagram">
